@@ -11,14 +11,20 @@ namespace WinProcess
     {
         
 
-        public static string Run()
+        public static string Run(string?[] args)
         {
             string _filePath = @"C:\Users\User\source\repos\WinProcess\CalculatorTask3\bin\Debug\net5.0\CalculatorTask3.exe";
-            IEnumerable<string> args = new List<string> { "Аргумент1", "Аргумент2", "Аргумент3" };
+            var arguments = args?.Aggregate((prev, current) => prev + " " + current);
+            using var process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = _filePath,
+                    Arguments = arguments ?? ""
+                }
+            };
 
-            using var process = new Process();
-
-            process.Start(_filePath, args);
+            process.Start();
 
             while (!process.WaitForExit(1000)) { }
 

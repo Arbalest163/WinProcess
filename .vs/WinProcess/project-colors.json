@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "28a3796c-ce00-417b-8a9c-556d39f8105d": {
+      "ProjectGuid": "28a3796c-ce00-417b-8a9c-556d39f8105d",
+      "DisplayName": "WinProcess",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    },
+    "f6707e2b-3038-4ce5-851a-7ecc33e48272": {
+      "ProjectGuid": "f6707e2b-3038-4ce5-851a-7ecc33e48272",
+      "DisplayName": "CalculatorTask3",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
