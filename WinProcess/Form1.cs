@@ -9,6 +9,7 @@ namespace WinProcess
         {
             InitializeComponent();
             InitComboBox();
+            openFileDialog1.Filter = "Text files(*.txt)|*.txt";
         }
 
         private void InitComboBox()
@@ -58,6 +59,31 @@ namespace WinProcess
 
             Task3.Run(new[] {value1.ToString(), value2.ToString(), action });
             button3.Enabled = true;
+        }
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            button4.Enabled = false;
+            if (string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                MessageBox.Show("Введите слово для поиска");
+                button4.Enabled = true;
+                return;
+            }
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+            var task4 = new Task4
+            {
+                FindWord = textBox3.Text,
+                FilePath = openFileDialog1.FileName
+            };
+            var result = await task4.RunAsync();
+
+            label8.Text = result.ToString();
+
+            button4.Enabled = true;
         }
     }
 }
