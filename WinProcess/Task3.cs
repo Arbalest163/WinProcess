@@ -22,13 +22,13 @@ namespace WinProcess
             try
             {
                 string _filePath = $"..\\..\\..\\..\\CalculatorTask3\\bin\\Debug\\net5.0\\CalculatorTask3.exe";
-                var arguments = args?.Aggregate((prev, current) => prev + " " + current);
+                var arguments = args?.Aggregate((prev, current) => prev + " " + current) ?? string.Empty;
                 using var process = new Process
                 {
                     StartInfo = new ProcessStartInfo
                     {
                         FileName = _filePath,
-                        Arguments = arguments ?? ""
+                        Arguments = arguments
                     }
                 };
 
