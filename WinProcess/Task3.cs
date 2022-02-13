@@ -1,13 +1,23 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinProcess
 {
     public class Task3
     {
-        public static void Run(string?[] args)
+        /// <summary>
+        /// Запуск задания 3
+        /// </summary>
+        /// <param name="args">Аргументы командной строки</param>
+        public static Task Run(string?[] args)
+        {
+            return Task.Run(() => ProcessRun(args));
+        }
+
+        private static void ProcessRun(string?[] args)
         {
             try
             {

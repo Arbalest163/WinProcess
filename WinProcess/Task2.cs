@@ -7,10 +7,10 @@ namespace WinProcess
     {
         private static Process? _process;
         /// <summary>
-        /// Запуск Задания 1
+        /// Запуск Задания 2
         /// </summary>
         /// <returns>Код завершения процесса</returns>
-        public static async Task<string> Run()
+        public static async Task<string> RunAsync()
         {
 
             await Task.Run(ProcessRun);

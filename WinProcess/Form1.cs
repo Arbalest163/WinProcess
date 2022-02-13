@@ -34,7 +34,7 @@ namespace WinProcess
         {
             button2.Enabled = false;
             label3.Text = "Дочерний процесс запущен";
-            label3.Text = await Task2.Run();
+            label3.Text = await Task2.RunAsync();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace WinProcess
             button2.Enabled = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void button3_Click(object sender, EventArgs e)
         {
             button3.Enabled = false;
             double value1 = 0;
@@ -57,7 +57,7 @@ namespace WinProcess
             }
             var action = comboBox1.SelectedItem.ToString();
 
-            Task3.Run(new[] {value1.ToString(), value2.ToString(), action });
+            await Task3.Run(new[] {value1.ToString(), value2.ToString(), action });
             button3.Enabled = true;
         }
 
